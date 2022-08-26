@@ -8,7 +8,6 @@ function MovieList() {
     const history = useHistory();
     const dispatch = useDispatch();
     const movies = useSelector(store => store.movies);
-    const id = useSelector(store => store.idSetter);
 
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
