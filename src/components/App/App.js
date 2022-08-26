@@ -1,8 +1,15 @@
 import {HashRouter as Router, Route} from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './App.css';
 import MovieList from '../MovieList/MovieList'
+import Details from '../Details/Details';
 
 function App() {
+
+  const movie = useSelector(store => store.movieSetter);
+  
+
+
   return (
     <div className="App">
       <h1>The Movies Saga!</h1>
@@ -12,7 +19,9 @@ function App() {
         </Route>
         
         {/* Details page */}
-
+        <Route path='/details'>
+          <Details />
+        </Route>
         {/* Add Movie page */}
       </Router>
     </div>
