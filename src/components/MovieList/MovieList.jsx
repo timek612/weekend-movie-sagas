@@ -31,9 +31,9 @@ function MovieList() {
             <section className="movies">
                 {movies.map(movie => {
                     return (
-                        <div key={movie.id} >
+                        <div key={movie.id} className="container" >
                             <h3>{movie.title}</h3>
-                            <img onClick={() => handleClick(movie)} src={movie.poster} alt={movie.title}/>
+                            <img className='image' onClick={() => handleClick(movie)} src={movie.poster} alt={movie.title}/>
                         </div>
                     );
                 })}
@@ -42,5 +42,6 @@ function MovieList() {
 
     );
 }
+
 
 export default MovieList;

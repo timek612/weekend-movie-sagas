@@ -1,3 +1,4 @@
+import './Details.css'
 import { useSelector, useDispatch, } from 'react-redux'
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
@@ -26,9 +27,9 @@ function Details () {
 
     return (
         <>
-        <button onClick={handleClick}>Back to List</button>
+        <button className='backBtn' onClick={handleClick}>Back to List</button>
         <h1>{movie.title}</h1>
-        <img src={movie.poster} alt="POSTER HERE" />
+        <img className='containerDetails' src={movie.poster} alt="POSTER HERE" />
         {genres.map (genre => {
             return (
                 <h4 key={genre.name}>{genre.name}</h4>
