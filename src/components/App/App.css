@@ -22,3 +22,13 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.descriptionBox {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  padding: 10px;
+  border-radius: 5px;
+  border: black solid 2px;
+}
