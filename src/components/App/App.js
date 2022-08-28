@@ -5,10 +5,10 @@ import MovieList from '../MovieList/MovieList'
 import Details from '../Details/Details';
 import Header from '../Header/Header';
 
-function App() {
+import '@fontsource/roboto';
 
-  const movie = useSelector(store => store.movieSetter);
-  
+
+function App() {
 
 
   return (

@@ -19,3 +19,11 @@
     position: absolute;
     left: 0;
 }
+
+.right {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 20px;
+}
+
