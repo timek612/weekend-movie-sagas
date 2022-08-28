@@ -5,13 +5,17 @@ import { useHistory } from 'react-router-dom'
 
 function Details () {
     const movie = useSelector(store => store.movieSetter);
+    const genres = useSelector(store => store.genres);
     const history = useHistory();
     const dispatch = useDispatch();
+
+    console.log(genres);
 
 
     useEffect(() => {
         dispatch({
-          type: 'GET_GENRES'
+          type: 'GET_GENRES',
+          payload: {movie}
         })
       }, [])
 
@@ -25,6 +29,11 @@ function Details () {
         <button onClick={handleClick}>Back to List</button>
         <h1>{movie.title}</h1>
         <img src={movie.poster} alt="POSTER HERE" />
+        {genres.map (genre => {
+            return (
+                <h4 key={genre.name}>{genre.name}</h4>
+            );
+        })}
         <div className='descriptionBox'>
         <p>{movie.description}</p>
         </div>

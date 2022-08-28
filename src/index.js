@@ -17,14 +17,15 @@ function* rootSaga() {
     yield takeEvery('GET_GENRES', getGenres)
 }
 
-function* getGenres() {
+function* getGenres(action) {
     try {
-        const genres = yield axios.get('/api/genre');
+        const genres = yield axios.get(`/api/genre/${action.payload.movie.id}`);
         console.log('grabbing genres:', genres.data);
-        
+        yield put({type: 'SET_GENRES', payload: genres.data});
+
     }
     catch {
-
+        console.log('error in getting genres');
     }
 }
 
