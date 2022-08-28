@@ -13,10 +13,20 @@ import axios from 'axios';
 
 // Create the rootSaga generator function
 function* rootSaga() {
-    yield takeEvery('FETCH_MOVIES', fetchAllMovies);
+    yield takeEvery('FETCH_MOVIES', fetchAllMovies)
+    yield takeEvery('GET_GENRES', getGenres)
 }
 
+function* getGenres() {
+    try {
+        const genres = yield axios.get('/api/genre');
+        console.log('grabbing genres:', genres.data);
+        
+    }
+    catch {
 
+    }
+}
 
 
 function* fetchAllMovies() {
